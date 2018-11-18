@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotWebGateApi", "OcelotWebGateApi\OcelotWebGateApi.csproj", "{279FBC93-5F0E-44B7-BC23-87919BD1A619}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServerOne", "ApiServerOne\ApiServerOne.csproj", "{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServerTwo", "ApiServerTwo\ApiServerTwo.csproj", "{4881B1A2-F275-40F6-A5E8-42E7A7418241}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{279FBC93-5F0E-44B7-BC23-87919BD1A619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279FBC93-5F0E-44B7-BC23-87919BD1A619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279FBC93-5F0E-44B7-BC23-87919BD1A619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4881B1A2-F275-40F6-A5E8-42E7A7418241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4881B1A2-F275-40F6-A5E8-42E7A7418241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4881B1A2-F275-40F6-A5E8-42E7A7418241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4881B1A2-F275-40F6-A5E8-42E7A7418241}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
