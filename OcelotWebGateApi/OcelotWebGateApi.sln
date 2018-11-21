@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServerOne", "ApiServerOne\ApiServerOne.csproj", "{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServerOne", "ApiServerOne\ApiServerOne.csproj", "{6E272C7A-C2F8-4CD9-B44C-5A8BC93A3067}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServerTwo", "ApiServerTwo\ApiServerTwo.csproj", "{4881B1A2-F275-40F6-A5E8-42E7A7418241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServerTwo", "ApiServerTwo\ApiServerTwo.csproj", "{4881B1A2-F275-40F6-A5E8-42E7A7418241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGateApi", "WebGateApi\WebGateApi.csproj", "{B54F1686-1EF4-4E45-B568-3FB0C0BE223E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGateApi", "WebGateApi\WebGateApi.csproj", "{B54F1686-1EF4-4E45-B568-3FB0C0BE223E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "IdentityService\IdentityService.csproj", "{B659BCFF-B311-426B-89EC-5D61C99BC1EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissionService", "MissionService\MissionService.csproj", "{A4823662-AACA-42CB-B85E-8F5726A36FC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{B54F1686-1EF4-4E45-B568-3FB0C0BE223E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B54F1686-1EF4-4E45-B568-3FB0C0BE223E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B54F1686-1EF4-4E45-B568-3FB0C0BE223E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B659BCFF-B311-426B-89EC-5D61C99BC1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B659BCFF-B311-426B-89EC-5D61C99BC1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B659BCFF-B311-426B-89EC-5D61C99BC1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B659BCFF-B311-426B-89EC-5D61C99BC1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

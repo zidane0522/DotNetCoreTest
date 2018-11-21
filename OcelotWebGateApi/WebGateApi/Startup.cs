@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,6 +42,18 @@ namespace WebGateApi
 
             //    }).WithDictionaryHandle();
             //};
+            var authenticationProviderKey = "TestKey";
+
+            Action<IdentityServerAuthenticationOptions> options = o =>
+            {
+                o.Authority = "https://whereyouridentityserverlives.com";
+                o.ApiName = "api";
+                o.SupportedTokens = SupportedTokens.Both;
+                o.ApiSecret = "secret";
+            };
+
+            services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey, options);
+
             services.AddOcelot(Configuration);
         }
 
