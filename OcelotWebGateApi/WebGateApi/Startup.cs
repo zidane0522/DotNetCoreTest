@@ -42,17 +42,24 @@ namespace WebGateApi
 
             //    }).WithDictionaryHandle();
             //};
-            var authenticationProviderKey = "TestKey";
 
-            Action<IdentityServerAuthenticationOptions> options = o =>
-            {
-                o.Authority = "https://whereyouridentityserverlives.com";
-                o.ApiName = "api";
-                o.SupportedTokens = SupportedTokens.Both;
-                o.ApiSecret = "secret";
+            var authenticationProviderKey = new string[] { "ClientServiceKeyForOneApi", "ClientServiceKeyForTwoApi" };
+            Action<IdentityServerAuthenticationOptions> optionsForOneApi = options => {
+                options.Authority = "http://localhost:52302";
+                options.ApiName = "api1";
+                options.SupportedTokens = SupportedTokens.Both;
+                options.ApiSecret = "one";
             };
 
-            services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey, options);
+            Action<IdentityServerAuthenticationOptions> optionsForTwoApi = options => {
+                options.Authority = "http://localhost:52302";
+                options.ApiName = "api2";
+                options.SupportedTokens = SupportedTokens.Both;
+                options.ApiSecret = "Two";
+            };
+
+            services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey[0], optionsForOneApi)
+                .AddIdentityServerAuthentication(authenticationProviderKey[1],optionsForTwoApi);
 
             services.AddOcelot(Configuration);
         }

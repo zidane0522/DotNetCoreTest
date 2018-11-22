@@ -12,8 +12,9 @@
       ],
       "UpstreamPathTemplate": "/One/{Method}",
       "UpstreamHttpMethod": [ "Get" ],
-      "RouteClaimsRequirement": {
-        "UserType": "registered"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ClientServiceKeyForOneApi",
+        "AllowedScopes": []
       }
     },
 
@@ -29,46 +30,10 @@
         }
       ],
       "UpstreamPathTemplate": "/Two/{Method}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-
-
-    { //IdentityService
-      "DownstreamPathTemplate": "/api/OneTest/{Method}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 52302
-        }
-      ],
-      "UpstreamPathTemplate": "/One/{Method}",
-      "UpstreamHttpMethod": [ "Post" ],
-      "ReRouteIsCaseSensitive": false,
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
-        "AllowedScopes": []
-      }
-    },
-
-
-    { //MissionService
-      "DownstreamPathTemplate": "/api/TwoTest/{Method}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 52306
-        }
-      ],
-      "UpstreamPathTemplate": "/Two/{Method}",
       "UpstreamHttpMethod": [ "Get" ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MissionServiceKey",
-        "AllowedScopes": [
-          "openid",
-          "offline_access"
-        ]
+        "AuthenticationProviderKey": "ClientServiceKeyForTwoApi",
+        "AllowedScopes": []
       }
     }
 
