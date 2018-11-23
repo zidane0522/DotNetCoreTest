@@ -48,14 +48,14 @@ namespace WebGateApi
                 options.Authority = "http://localhost:52302";
                 options.ApiName = "api1";
                 options.SupportedTokens = SupportedTokens.Both;
-                options.ApiSecret = "one";
+                //options.ApiSecret = "one";
             };
 
             Action<IdentityServerAuthenticationOptions> optionsForTwoApi = options => {
                 options.Authority = "http://localhost:52302";
                 options.ApiName = "api2";
                 options.SupportedTokens = SupportedTokens.Both;
-                options.ApiSecret = "Two";
+                //options.ApiSecret = "Two";
             };
 
             services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey[0], optionsForOneApi)
