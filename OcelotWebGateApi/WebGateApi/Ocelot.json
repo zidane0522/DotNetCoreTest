@@ -14,7 +14,7 @@
       "UpstreamHttpMethod": [ "Get" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "ClientServiceKeyForOneApi",
-        "AllowedScopes": ["api1"]
+        "AllowedScopes": [ "api1" ]
       }
     },
 

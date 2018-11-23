@@ -46,19 +46,17 @@ namespace WebGateApi
             var authenticationProviderKey = new string[] { "ClientServiceKeyForOneApi", "ClientServiceKeyForTwoApi" };
             Action<IdentityServerAuthenticationOptions> optionsForOneApi = options => {
                 options.Authority = "http://localhost:52302";
-                options.ApiName = "api1";
                 options.SupportedTokens = SupportedTokens.Both;
                 //options.ApiSecret = "one";
             };
 
             Action<IdentityServerAuthenticationOptions> optionsForTwoApi = options => {
                 options.Authority = "http://localhost:52302";
-                options.ApiName = "api2";
                 options.SupportedTokens = SupportedTokens.Both;
                 //options.ApiSecret = "Two";
             };
 
-            services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey[0], optionsForOneApi)
+            services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey[0])
                 .AddIdentityServerAuthentication(authenticationProviderKey[1],optionsForTwoApi);
 
             services.AddOcelot(Configuration);

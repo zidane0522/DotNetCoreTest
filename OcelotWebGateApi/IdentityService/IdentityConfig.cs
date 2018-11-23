@@ -25,18 +25,26 @@ namespace IdentityService
         {
             return new List<Client> {
                 new Client(){
-                    ClientId="client1",
-                    ClientName="client1Name",
+                    ClientId="client1and2",
+                    ClientName="client1and2Name",
                     ClientSecrets={ new Secret("one".Sha256()),new Secret("two".Sha256())},
                     AllowedScopes={ "api1","api2"}
                 },
 
                 new Client()
                 {
-                    ClientId="client2",
-                    ClientName="client2Name",
+                    ClientId="client1",
+                    ClientName="client1Name",
                     ClientSecrets={ new Secret("one".Sha256())},
                     AllowedScopes={ "api1"}
+                },
+
+                new Client()
+                {
+                    ClientId="client2",
+                    ClientName="client2Name",
+                    ClientSecrets={ new Secret("two".Sha256())},
+                    AllowedScopes={ "api2"}
                 }
             };
         }
