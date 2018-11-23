@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServerTwo", "ApiServerTw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGateApi", "WebGateApi\WebGateApi.csproj", "{B54F1686-1EF4-4E45-B568-3FB0C0BE223E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "IdentityService\IdentityService.csproj", "{B659BCFF-B311-426B-89EC-5D61C99BC1EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "IdentityService\IdentityService.csproj", "{B659BCFF-B311-426B-89EC-5D61C99BC1EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissionService", "MissionService\MissionService.csproj", "{A4823662-AACA-42CB-B85E-8F5726A36FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissionService", "MissionService\MissionService.csproj", "{A4823662-AACA-42CB-B85E-8F5726A36FC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsoleApp", "ClientConsoleApp\ClientConsoleApp.csproj", "{FC369DF6-8A3C-48CE-A7D7-7F7E0DB41EAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4823662-AACA-42CB-B85E-8F5726A36FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC369DF6-8A3C-48CE-A7D7-7F7E0DB41EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC369DF6-8A3C-48CE-A7D7-7F7E0DB41EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC369DF6-8A3C-48CE-A7D7-7F7E0DB41EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC369DF6-8A3C-48CE-A7D7-7F7E0DB41EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
