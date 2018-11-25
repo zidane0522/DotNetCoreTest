@@ -34,30 +34,24 @@ namespace WebGateApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Action<ConfigurationBuilderCachePart> settings = (x) =>
-            //{
-            //    x.WithMicrosoftLogging(log =>
-            //    {
-            //        log.AddConsole(LogLevel.Debug);
-
-            //    }).WithDictionaryHandle();
-            //};
-
             var authenticationProviderKey = new string[] { "ClientServiceKeyForOneApi", "ClientServiceKeyForTwoApi" };
             Action<IdentityServerAuthenticationOptions> optionsForOneApi = options => {
                 options.Authority = "http://localhost:52302";
+                options.RequireHttpsMetadata = false;
                 options.SupportedTokens = SupportedTokens.Both;
-                //options.ApiSecret = "one";
+                //options.ApiName = "api1";
+              
             };
 
-            Action<IdentityServerAuthenticationOptions> optionsForTwoApi = options => {
-                options.Authority = "http://localhost:52302";
-                options.SupportedTokens = SupportedTokens.Both;
-                //options.ApiSecret = "Two";
-            };
+            //Action<IdentityServerAuthenticationOptions> optionsForTwoApi = options => {
+            //    options.Authority = "http://localhost:52302";
+            //    options.SupportedTokens = SupportedTokens.Both;
+            //    //options.ApiSecret = "Two";
+            //};
 
-            services.AddAuthentication().AddIdentityServerAuthentication(authenticationProviderKey[0])
-                .AddIdentityServerAuthentication(authenticationProviderKey[1],optionsForTwoApi);
+            services.AddAuthentication()
+                .AddIdentityServerAuthentication(authenticationProviderKey[0],optionsForOneApi)
+               ;
 
             services.AddOcelot(Configuration);
         }
@@ -65,16 +59,7 @@ namespace WebGateApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseOcelot().Wait();
         }
     }

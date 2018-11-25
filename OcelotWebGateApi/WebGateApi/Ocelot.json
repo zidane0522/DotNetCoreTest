@@ -1,5 +1,4 @@
 {
-
   "ReRoutes": [
     {
       "DownstreamPathTemplate": "/api/OneTest/{Method}",
@@ -16,26 +15,26 @@
         "AuthenticationProviderKey": "ClientServiceKeyForOneApi",
         "AllowedScopes": [ "api1" ]
       }
-    },
-
-
-
-    {
-      "DownstreamPathTemplate": "/api/TwoTest/{Method}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 63282
-        }
-      ],
-      "UpstreamPathTemplate": "/Two/{Method}",
-      "UpstreamHttpMethod": [ "Get" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "ClientServiceKeyForTwoApi",
-        "AllowedScopes": ["api2"]
-      }
     }
+
+
+
+    //{
+    //  "DownstreamPathTemplate": "/api/TwoTest/{Method}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 63282
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/Two/{Method}",
+    //  "UpstreamHttpMethod": [ "Get" ],
+    //  "AuthenticationOptions": {
+    //    "AuthenticationProviderKey": "ClientServiceKeyForTwoApi",
+    //    "AllowedScopes": ["api2"]
+    //  }
+    //}
 
   ],
   "GlobalConfiguration": {
