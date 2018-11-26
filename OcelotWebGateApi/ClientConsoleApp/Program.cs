@@ -9,12 +9,14 @@ namespace ClientConsoleApp
     {
         static void Main(string[] args)
         {
-            var disco = DiscoveryClient.GetAsync("http://localhost:52302").Result;
+            var disco = DiscoveryClient.GetAsync("http://localhost:63388/").Result;
             if (disco.IsError)
             {
                 Console.WriteLine(disco.IsError);
                 return;
             }
+
+          
             var tokenClient1 = new TokenClient(disco.TokenEndpoint, "client1", "one");
             var tokenResponse1 = tokenClient1.RequestClientCredentialsAsync("api1").Result;
             if (tokenResponse1.IsError)

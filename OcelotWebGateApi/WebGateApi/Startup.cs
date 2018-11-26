@@ -39,7 +39,7 @@ namespace WebGateApi
                 options.Authority = "http://localhost:52302";
                 options.RequireHttpsMetadata = false;
                 options.SupportedTokens = SupportedTokens.Both;
-                //options.ApiName = "api1";
+                options.ApiSecret = "one";
               
             };
 

@@ -1,6 +1,20 @@
 {
   "ReRoutes": [
     {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 52302
+        }
+      ],
+      "UpstreamPathTemplate": "/{url}",
+      "UpstreamHttpMethod": [ "Get","Post" ]
+    },
+
+
+    {
       "DownstreamPathTemplate": "/api/OneTest/{Method}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
