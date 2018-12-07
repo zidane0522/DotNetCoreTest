@@ -27,8 +27,10 @@ namespace IdentityService
         {
             services.AddIdentityServer()
                .AddDeveloperSigningCredential()
+               .AddInMemoryIdentityResources(IdentityConfig.GetIdentityResources())
                .AddInMemoryApiResources(IdentityConfig.GetApiResources())
-               .AddInMemoryClients(IdentityConfig.GetClients());
+               .AddInMemoryClients(IdentityConfig.GetClients())
+               .AddTestUsers(IdentityConfig.GetTestUsers().ToList());
             services.AddMvc();
         }
 

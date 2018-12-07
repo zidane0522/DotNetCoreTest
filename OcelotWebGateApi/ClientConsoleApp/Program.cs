@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
+using static IdentityModel.OidcConstants;
 
 namespace ClientConsoleApp
 {
@@ -20,12 +21,39 @@ namespace ClientConsoleApp
             var tokenEndpont = httpDisco.TokenEndpoint;
             var keys = httpDisco.KeySet.Keys;
 
-            var tokenResponse = httpClient.RequestTokenAsync(new ClientCredentialsTokenRequest {
+            #region passwordGrant
+            var pswTokenResponse = httpClient.RequestTokenAsync(new IdentityModel.Client.TokenRequest {
                 Address=tokenEndpont,
-                ClientId="client1",
+                ClientId= "mvc",
                 ClientSecret="one",
-                Scope="api1",
-                GrantType= "client_credentials"
+                Parameters =
+                {
+                    new System.Collections.Generic.KeyValuePair<string, string>("Scope","api1"),
+                    new System.Collections.Generic.KeyValuePair<string, string>("UserName","micky"),
+                    new System.Collections.Generic.KeyValuePair<string, string>("Password","psw"),
+                },
+                GrantType=GrantTypes.Implicit
+            }).Result;
+            if (pswTokenResponse.IsError)
+            {
+                Console.WriteLine(pswTokenResponse.IsError);
+                return;
+            }
+            var pswToken = pswTokenResponse.AccessToken;
+            #endregion
+            var pswCustom = pswTokenResponse.Json.TryGetString("custom_parameter");
+            httpClient.SetBearerToken(pswToken);
+            var pswResponse = httpClient.GetAsync("http://localhost:63388/One/GetMethod1").Result;
+
+
+            #region client_credentials accessToken
+            var tokenResponse = httpClient.RequestTokenAsync(new ClientCredentialsTokenRequest
+            {
+                Address = tokenEndpont,
+                ClientId = "client1",
+                ClientSecret = "one",
+                Scope = "api1",
+                GrantType = GrantTypes.ClientCredentials
             }).Result;
             if (tokenResponse.IsError)
             {
@@ -33,6 +61,8 @@ namespace ClientConsoleApp
                 return;
             }
             var token = tokenResponse.AccessToken;
+            #endregion
+
             var custom = tokenResponse.Json.TryGetString("custom_parameter");
             httpClient.SetBearerToken(token);
             var response = httpClient.GetAsync("http://localhost:63388/One/GetMethod1").Result;
