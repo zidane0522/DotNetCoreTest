@@ -16,6 +16,8 @@ namespace ApiServerOne.Controllers
         [HttpGet("GetMethod1")]
         public string GetMethod1()
         {
+            var a = HttpContext;
+            var s = a.User.Claims.ToList()[6];
             return "OneTest GetMethod1";
         }
     }

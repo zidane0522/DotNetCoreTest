@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissionService", "MissionSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientConsoleApp", "ClientConsoleApp\ClientConsoleApp.csproj", "{FC369DF6-8A3C-48CE-A7D7-7F7E0DB41EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthenticationQuickStartUI", "UserAuthenticationQuickStartUI\UserAuthenticationQuickStartUI.csproj", "{06D0BEFC-6B61-437A-B494-361F81A17AE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthenticationQuickStartUI", "UserAuthenticationQuickStartUI\UserAuthenticationQuickStartUI.csproj", "{06D0BEFC-6B61-437A-B494-361F81A17AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactTest", "ReactTest\ReactTest.csproj", "{41B2C6B4-09BE-4C57-9680-07612530488D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactTest", "ReactTest\ReactTest.csproj", "{41B2C6B4-09BE-4C57-9680-07612530488D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthenticationQuickStartUI_Client", "UserAuthenticationQuickStartUI_Client\UserAuthenticationQuickStartUI_Client.csproj", "{99554FDF-2BBA-43F6-AC07-9B161786772C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{41B2C6B4-09BE-4C57-9680-07612530488D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41B2C6B4-09BE-4C57-9680-07612530488D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41B2C6B4-09BE-4C57-9680-07612530488D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99554FDF-2BBA-43F6-AC07-9B161786772C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99554FDF-2BBA-43F6-AC07-9B161786772C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99554FDF-2BBA-43F6-AC07-9B161786772C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99554FDF-2BBA-43F6-AC07-9B161786772C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
