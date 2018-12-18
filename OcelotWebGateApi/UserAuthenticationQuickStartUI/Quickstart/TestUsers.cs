@@ -31,10 +31,13 @@ namespace IdentityServer4.Quickstart.UI
                     new Claim(JwtClaimTypes.Name, "Bob Smith"),
                     new Claim(JwtClaimTypes.GivenName, "Bob"),
                     new Claim(JwtClaimTypes.FamilyName, "Smith"),
+                    new Claim(JwtClaimTypes.PhoneNumber,"13520907750",ClaimValueTypes.String),
+                    new Claim(JwtClaimTypes.Role,"sdx",ClaimValueTypes.String),
                     new Claim(JwtClaimTypes.Email, "BobSmith@email.com"),
                     new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
                     new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
-                    new Claim(JwtClaimTypes.Address, @"{ 'street_address': 'One Hacker Way', 'locality': 'Heidelberg', 'postal_code': 69118, 'country': 'Germany' }", IdentityServer4.IdentityServerConstants.ClaimValueTypes.Json),
+                    new Claim(JwtClaimTypes.Address,"aaaaaaaaafdfd"),
+                    //new Claim(JwtClaimTypes.Address, @"{ 'street_address': 'One Hacker Way', 'locality': 'Heidelberg', 'postal_code': 69118, 'country': 'Germany' }", IdentityServer4.IdentityServerConstants.ClaimValueTypes.Json),
                     new Claim("location", "somewhere")
                 }
             }

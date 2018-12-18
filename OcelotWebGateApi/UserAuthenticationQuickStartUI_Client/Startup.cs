@@ -34,7 +34,7 @@ namespace UserAuthenticationQuickStartUI_Client
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             services.AddAuthentication(options=> {
@@ -44,11 +44,16 @@ namespace UserAuthenticationQuickStartUI_Client
             }).AddCookie("Cookies")
             .AddOpenIdConnect("oidc",options=> {
                 options.ClientId = "mvc";
-              
+                options.GetClaimsFromUserInfoEndpoint = false;
                 options.SignInScheme = "Cookies";
                 options.Authority = "http://localhost:56400";
                 options.RequireHttpsMetadata = false;
                 options.SaveTokens = true;
+                options.Scope.Add("openid");
+                options.Scope.Add("profile");
+                options.Scope.Add("address");
+                options.Scope.Add("phone");
+                options.Scope.Add("email");
             });
 
         }

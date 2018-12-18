@@ -1,4 +1,5 @@
-﻿using IdentityServer4;
+﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 using Microsoft.Extensions.Configuration;
@@ -50,12 +51,17 @@ namespace UserAuthenticationQuickStartUI
                     ClientId="mvc",
                     ClientName="MVC Client",
                     AllowedGrantTypes=GrantTypes.Implicit,
+                    AlwaysIncludeUserClaimsInIdToken=true,
+                    AlwaysSendClientClaims=true,
                     RedirectUris={ "http://localhost:52086/signin-oidc" },
                     PostLogoutRedirectUris={ "http://localhost:52086/signout-callback-oidc" },
                     AllowedScopes=new List<string>
-                    {
+                    {   IdentityServerConstants.StandardScopes.Phone,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
+   
                     }
                 }
             };
@@ -71,8 +77,11 @@ namespace UserAuthenticationQuickStartUI
                     Password="psw",
                     Claims=
                     {
-                        new Claim(ClaimTypes.Role,"sdx"),
-                        new Claim(ClaimTypes.Name,"元英")
+                        new Claim(JwtClaimTypes.Role,"sdx"),
+                        new Claim(JwtClaimTypes.Name,"元英"),
+                        new Claim(JwtClaimTypes.Email,"lishen@163.com"),
+                        new Claim(JwtClaimTypes.PhoneNumber,"13522225555"),
+                        new Claim(JwtClaimTypes.Address,"中国上海市静安区")
                     }
                 },
                 new TestUser{
@@ -102,8 +111,12 @@ namespace UserAuthenticationQuickStartUI
         {
             return new List<IdentityResource>
             {
+                new IdentityResources.Phone(),
+                new IdentityResources.Address(),
+                new IdentityResources.Email(),
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+
             };
         }
     }
