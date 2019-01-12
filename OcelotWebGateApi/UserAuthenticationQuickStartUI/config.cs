@@ -63,6 +63,33 @@ namespace UserAuthenticationQuickStartUI
                         IdentityServerConstants.StandardScopes.Profile,
    
                     }
+                },
+
+                new Client()
+                {
+                        ClientId = "HybridClient",
+                        ClientName = "Hybrid Client",
+                        AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                                    AlwaysIncludeUserClaimsInIdToken=true,
+                    AlwaysSendClientClaims=true,
+                        ClientSecrets =
+                        {
+                            new Secret("secret".Sha256())
+                        },
+
+                        RedirectUris           = { "http://localhost:52086/signin-oidc" },
+                        PostLogoutRedirectUris = { "http://localhost:52086/signout-callback-oidc" },
+
+                        AllowedScopes =
+                        {
+                            IdentityServerConstants.StandardScopes.Phone,
+                            IdentityServerConstants.StandardScopes.Address,
+                            IdentityServerConstants.StandardScopes.Email,
+                            IdentityServerConstants.StandardScopes.OpenId,
+                            IdentityServerConstants.StandardScopes.Profile,
+                            "api1"
+                        },
+                        AllowOfflineAccess = true
                 }
             };
         }

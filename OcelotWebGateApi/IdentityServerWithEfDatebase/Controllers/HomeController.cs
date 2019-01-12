@@ -3,25 +3,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using UserAuthenticationQuickStartUI_Client.Models;
+using IdentityServerWithEfDatebase.Models;
 
-namespace UserAuthenticationQuickStartUI_Client.Controllers
+namespace IdentityServerWithEfDatebase.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
         public IActionResult Index()
         {
-            var s = HttpContext;
-
-            var accessToken = HttpContext.GetTokenAsync("access_token").Result;
-
-            var refreshToken = HttpContext.GetTokenAsync("refresh_token").Result;
-
-            var identityToken = HttpContext.GetTokenAsync("identity_token").Result;
             return View();
         }
 
